@@ -1,0 +1,3 @@
+langdetect==1.0.8
+epic_path==0.1.0
+fbchat==1.9.6
