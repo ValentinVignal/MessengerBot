@@ -20,6 +20,7 @@ class Bot(Client):
     """
 
     """
+
     def sleep(self):
         time.sleep(random.uniform(0.5, 2))
 
@@ -80,6 +81,16 @@ class Bot(Client):
                     message_id=message_object.uid,
                     reaction=models.MessageReaction.HEART
                 )
+            if 'usually' in message_object.text:
+                self.sleep()
+                self.send(
+                    message=models.Message(
+                        text='It depends',
+                        reply_to_id=message_object.uid
+                    ),
+                    thread_id=thread_id,
+                    thread_type=thread_type,
+                )
 
 
 if __name__ == '__main__':
@@ -87,6 +98,3 @@ if __name__ == '__main__':
     password = getpass.getpass()
     bot = Bot(email=email, password=password)
     bot.listen()
-
-
-
