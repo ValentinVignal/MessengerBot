@@ -16,7 +16,7 @@ def is_lang(text, lang):
     return functools.reduce(lambda x, y: x or y.lang == lang, lang_list, False)
 
 
-class Bot(Client):
+class YunAnnBot(Client):
     """
 
     """
@@ -96,5 +96,5 @@ class Bot(Client):
 if __name__ == '__main__':
     email = input('Email: ')
     password = getpass.getpass()
-    bot = Bot(email=email, password=password)
+    bot = YunAnnBot(email=email, password=password)
     bot.listen()
