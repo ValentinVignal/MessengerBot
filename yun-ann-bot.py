@@ -35,7 +35,7 @@ class YunAnnBot(Client):
         :param kwargs:
         :return:
         """
-        bad_words = ['berlin', 'menfred', 'harry', 'style']
+        bad_words = ['berlin', 'menfred', 'harry', 'styles']
 
         # toggle = self.fetchThreadMessages(thread_id=self.uid, limit=1)  # Own account
         if message_object.text is not None:
@@ -81,7 +81,7 @@ class YunAnnBot(Client):
                         message_id=message_object.uid,
                         reaction=models.MessageReaction.HEART
                     )
-                if 'usually' in message_object.text:
+                if 'usually' in message_object.text.lower():
                     self.sleep()
                     self.send(
                         message=models.Message(
@@ -98,3 +98,4 @@ if __name__ == '__main__':
     password = getpass.getpass()
     bot = YunAnnBot(email=email, password=password)
     bot.listen()
+

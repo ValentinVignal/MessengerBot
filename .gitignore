@@ -133,3 +133,4 @@ dmypy.json
 
 # Project
 data/
+venv_mb/
